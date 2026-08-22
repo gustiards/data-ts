@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B1220">
+
+<title>Profil Tim — Team Support</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root{
+    --ink:#0B1220;
+    --ink-2:#132036;
+    --signal:#2DD4BF;
+    --signal-dim:#0F766E;
+    --paper:#FFFFFF;
+    --ash:#64748B;
+    --line:#E4E9F0;
+    --field:#F5F7FA;
+    --success:#16A34A;
+    --error:#DC2626;
+}
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    margin:0;
+    background:var(--ink);
+    font-family:'IBM Plex Sans', Arial, sans-serif;
+    color:#111827;
+}
+
+.app{
+    max-width:480px;
+    margin:0 auto;
+    min-height:100vh;
+    background:var(--paper);
+    position:relative;
+    padding-bottom:104px;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    background:
+        radial-gradient(120% 140% at 15% -10%, #1B2E4A 0%, transparent 55%),
+        linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
+
+    color:#fff;
+
+    padding:34px 24px 46px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    right:-40px;
+    top:-40px;
+
+    width:180px;
+    height:180px;
+
+    border:1px solid rgba(45,212,191,.18);
+
+    border-radius:50%;
+}
+
+.eyebrow{
+    font-family:'Chakra Petch', sans-serif;
+
+    font-size:11px;
+    font-weight:600;
+
+    letter-spacing:.14em;
+
+    color:var(--signal);
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+}
+
+h1{
+    font-family:'Chakra Petch', sans-serif;
+
+    font-size:30px;
+    font-weight:700;
+
+    margin:0 0 8px;
+
+    letter-spacing:-.01em;
+}
+
+.hero-sub{
+    margin:0 0 26px;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    color:#AEB9CC;
+
+    max-width:30ch;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+.hero-logo{
+    position:absolute;
+    top:22px;
+    right:22px;
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    z-index:2;
+}
+
+/* ==========================================
+   SIGNAL METER
+========================================== */
+
+.signal-row{
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:22px;
+}
+
+.signal-meter{
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:5px;
+
+    height:30px;
+}
+
+.signal-meter .bar{
+    width:7px;
+
+    border-radius:3px 3px 1px 1px;
+
+    background:rgba(255,255,255,.14);
+
+    transition:background .35s ease;
+}
+
+.signal-meter .bar[data-bar="1"]{
+    height:10px;
+}
+
+.signal-meter .bar[data-bar="2"]{
+    height:15px;
+}
+
+.signal-meter .bar[data-bar="3"]{
+    height:20px;
+}
+
+.signal-meter .bar[data-bar="4"]{
+    height:25px;
+}
+
+.signal-meter .bar[data-bar="5"]{
+    height:30px;
+}
+
+.signal-meter .bar.on{
+    background:var(--signal);
+
+    box-shadow:0 0 10px rgba(45,212,191,.55);
+}
+
+.signal-label{
+    font-family:'Chakra Petch', sans-serif;
+
+    font-size:12px;
+
+    color:#9BA8BC;
+
+    white-space:nowrap;
+}
+
+.signal-label b{
+    color:#fff;
+
+    font-weight:600;
+}
+
+
+/* ==========================================
+   FORM CARD
+========================================== */
+
+.card{
+    background:var(--paper);
+
+    border-radius:20px 20px 0 0;
+
+    margin-top:-22px;
+
+    position:relative;
+
+    padding:26px 22px 8px;
+
+    box-shadow:0 -8px 24px rgba(15,23,42,.06);
+}
+
+.section-label{
+    font-family:'Chakra Petch', sans-serif;
+
+    font-size:12px;
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--signal-dim);
+
+    margin:26px 0 14px;
+}
+
+.section-label:first-child{
+    margin-top:0;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+label{
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    color:#334155;
+}
+
+input,
+select{
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1.5px solid var(--line);
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    background:var(--field);
+
+    color:#0F172A;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    transition:
+        border-color .15s ease,
+        background .15s ease;
+}
+
+select{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%2364748B' stroke-width='1.6' fill='none' fill-rule='evenodd'/></svg>");
+
+    background-repeat:no-repeat;
+
+    background-position:right 14px center;
+
+    padding-right:36px;
+}
+
+input::placeholder{
+    color:#9AA5B4;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+
+    border-color:var(--signal);
+
+    background:#fff;
+
+    box-shadow:0 0 0 3px rgba(45,212,191,.15);
+}
+
+input:invalid:not(:placeholder-shown){
+    border-color:#F0B4B4;
+}
+
+
+/* ==========================================
+   DATA SECTION
+========================================== */
+
+.data-section{
+
+    max-width:480px;
+
+    margin:24px auto 0;
+
+    background:#fff;
+
+    padding:24px 22px 120px;
+
+    border-top:1px solid var(--line);
+
+}
+
+.data-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.data-title h2{
+
+    font-family:'Chakra Petch', sans-serif;
+
+    font-size:20px;
+
+    margin:0;
+
+    color:var(--ink);
+
+}
+
+.total-badge{
+
+    background:#E6FFFA;
+
+    color:#0F766E;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-row{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:14px;
+
+}
+
+.search-row input{
+
+    flex:1;
+
+}
+
+.btn-refresh{
+
+    width:auto;
+
+    padding:0 14px;
+
+    background:var(--ink);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-family:'Chakra Petch', sans-serif;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.btn-refresh:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+}
+
+.data-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:900px;
+
+}
+
+.data-table th{
+
+    background:var(--ink);
+
+    color:#fff;
+
+    font-family:'Chakra Petch', sans-serif;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    padding:11px 10px;
+
+    text-align:left;
+
+    white-space:nowrap;
+
+}
+
+.data-table td{
+
+    padding:10px;
+
+    border-bottom:1px solid var(--line);
+
+    font-size:12px;
+
+    color:#334155;
+
+    white-space:nowrap;
+
+}
+
+.data-table tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+.data-table tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+.empty-data{
+
+    text-align:center !important;
+
+    padding:25px !important;
+
+    color:#94A3B8 !important;
+
+}
+
+
+/* ==========================================
+   STICKY SUBMIT BAR
+========================================== */
+
+.submit-bar{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    max-width:480px;
+
+    background:#fff;
+
+    border-top:1px solid var(--line);
+
+    padding:12px 22px calc(14px + env(safe-area-inset-bottom));
+
+    box-shadow:0 -6px 18px rgba(15,23,42,.06);
+
+    z-index:100;
+
+}
+
+#pesan{
+
+    text-align:center;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    min-height:0;
+
+    margin-bottom:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+        max-height .25s ease,
+        margin-bottom .25s ease;
+}
+
+#pesan.show{
+
+    max-height:30px;
+
+    margin-bottom:8px;
+
+}
+
+#pesan.success{
+
+    color:var(--success);
+
+}
+
+#pesan.error{
+
+    color:var(--error);
+
+}
+
+#pesan.loading{
+
+    color:#64748B;
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:var(--ink);
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-family:'Chakra Petch', sans-serif;
+
+    font-weight:600;
+
+    letter-spacing:.03em;
+
+    cursor:pointer;
+
+    transition:
+        background .15s ease,
+        transform .1s ease;
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+button:disabled{
+
+    background:#B9C2CF;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+    .data-section{
+
+        padding-left:16px;
+
+        padding-right:16px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- ======================================
+         HERO
+    ======================================= -->
+
+<img
+    src="lg.png"
+    alt="Logo Team Support"
+    class="hero-logo"
+>
+
+    <header class="hero">
+
+        <div class="eyebrow">
+            Team Support · SUMBAGSEL
+        </div>
+
+        <h1>
+            ADD Profil Team Support
+        </h1>
+
+        <p class="hero-sub">
+            Silahkan Di isi sesuai dengan data profil.
+        </p>
+
+
+        <div class="signal-row">
+
+            <div
+                class="signal-meter"
+                id="signalMeter"
+                aria-hidden="true"
+            >
+
+                <div
+                    class="bar"
+                    data-bar="1"
+                ></div>
+
+                <div
+                    class="bar"
+                    data-bar="2"
+                ></div>
+
+                <div
+                    class="bar"
+                    data-bar="3"
+                ></div>
+
+                <div
+                    class="bar"
+                    data-bar="4"
+                ></div>
+
+                <div
+                    class="bar"
+                    data-bar="5"
+                ></div>
+
+            </div>
+
+
+            <div class="signal-label">
+
+                <b id="signalCount">
+                    0
+                </b>
+
+                /
+
+                <span id="signalTotal">
+                    7
+                </span>
+
+                data terisi
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ======================================
+         FORM
+    ======================================= -->
+
+    <main class="card">
+
+        <form
+            id="formTim"
+            novalidate
+        >
+
+
+            <div class="section-label">
+                Data Diri
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="nama">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="nik">
+                    NIK Karyawan
+                </label>
+
+                <input
+                    type="text"
+                    id="nik"
+                    placeholder="Masukkan NIK karyawan"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="nohp">
+                    No HP
+                </label>
+
+                <input
+                    type="tel"
+                    id="nohp"
+                    placeholder="08xxxxxxxxxx"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <div class="section-label">
+                Penempatan
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="jabatan">
+                    Jabatan
+                </label>
+
+                <select
+                    id="jabatan"
+                    required
+                >
+
+                    <option value="">
+                        -- Pilih Jabatan --
+                    </option>
+
+                    <option value="Team Support Staff">
+                        Team Support Staff
+                    </option>
+
+                    <option value="Team Support Asst Supervisor">
+                        Team Support Asst Supervisor
+                    </option>
+
+                    <option value="Team Support Supervisor">
+                        Team Support Supervisor
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="divisi">
+                    Divisi
+                </label>
+
+                <select
+                    id="divisi"
+                    required
+                >
+
+                    <option value="">
+                        -- Pilih Divisi --
+                    </option>
+
+                    <option value="TS BM">
+                        TS BM
+                    </option>
+
+                    <option value="TS DM">
+                        TS DM
+                    </option>
+
+                    <option value="TS AM">
+                        TS AM
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="homebase">
+                    Homebase
+                </label>
+
+                <input
+                    type="text"
+                    id="homebase"
+                    placeholder="Masukkan homebase"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="wilayah">
+                    Wilayah
+                </label>
+
+                <select
+                    id="wilayah"
+                    required
+                >
+
+                    <option value="">
+                        -- Pilih Wilayah --
+                    </option>
+
+                    <option value="Bangka Belitung">
+                        Bangka-Belitung
+                    </option>
+
+                    <option value="Palembang">
+                        Palembang
+                    </option>
+
+                    <option value="Lampung">
+                        Lampung
+                    </option>
+
+                    <option value="Lintas Tengah">
+                        Lintas Tengah
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </form>
+
+    </main>
+
+
+
+    <!-- ======================================
+         DATA SPREADSHEET
+    ======================================= -->
+
+    <section class="data-section">
+
+
+        <div class="data-title">
+
+            <h2>
+                Data Anggota
+            </h2>
+
+            <div
+                class="total-badge"
+                id="totalData"
+            >
+                0 Anggota
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-row">
+
+            <input
+                type="text"
+                id="searchData"
+                placeholder="Cari nama, NIK, divisi..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                class="btn-refresh"
+                id="btnRefresh"
+            >
+                REFRESH
+            </button>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            No
+                        </th>
+
+                        <th>
+                            Nama
+                        </th>
+
+                        <th>
+                            NIK
+                        </th>
+
+                        <th>
+                            Jabatan
+                        </th>
+
+                        <th>
+                            Divisi
+                        </th>
+
+                        <th>
+                            Homebase
+                        </th>
+
+                        <th>
+                            No HP
+                        </th>
+
+                        <th>
+                            Wilayah
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="dataTable">
+
+                    <tr>
+
+                        <td
+                            colspan="9"
+                            class="empty-data"
+                        >
+                            Memuat data...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+
+<!-- ======================================
+     SUBMIT BAR
+======================================= -->
+
+<div class="submit-bar">
+
+    <div id="pesan"></div>
+
+    <button
+        type="submit"
+        id="btnSimpan"
+        form="formTim"
+    >
+        SIMPAN DATA
+    </button>
+
+</div>
+
+
+
+<script>
+
+
+// =====================================================
+// URL GOOGLE APPS SCRIPT
+// =====================================================
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbw347VzcF2ZWr04U_m_hSof9Av5v6OacqS-BW8y7RH6sEU6NAGDh28BQbVVraH36wIeRA/exec";
+
+
+
+// =====================================================
+// VARIABEL DATA
+// =====================================================
+
+let semuaData = [];
+
+
+
+// =====================================================
+// SIGNAL METER
+// =====================================================
+
+const fieldIds = [
+    "nama",
+    "nik",
+    "jabatan",
+    "divisi",
+    "homebase",
+    "nohp",
+    "wilayah"
+];
+
+const bars =
+    document.querySelectorAll(
+        "#signalMeter .bar"
+    );
+
+const signalCount =
+    document.getElementById(
+        "signalCount"
+    );
+
+
+function updateSignal(){
+
+    const filled =
+        fieldIds.filter(
+            id =>
+                document
+                .getElementById(id)
+                .value
+                .trim() !== ""
+        ).length;
+
+
+    signalCount.textContent =
+        filled;
+
+
+    const activeBars =
+        Math.ceil(
+            (filled / fieldIds.length)
+            * bars.length
+        );
+
+
+    bars.forEach(
+        (bar, i) => {
+
+            bar.classList.toggle(
+                "on",
+                i < activeBars
+            );
+
+        }
+    );
+
+}
+
+
+fieldIds.forEach(
+    id => {
+
+        const el =
+            document.getElementById(id);
+
+        el.addEventListener(
+            "input",
+            updateSignal
+        );
+
+        el.addEventListener(
+            "change",
+            updateSignal
+        );
+
+    }
+);
+
+
+
+// =====================================================
+// AMBIL DATA DARI GOOGLE SHEET
+// =====================================================
+
+async function loadData(){
+
+    const table =
+        document.getElementById(
+            "dataTable"
+        );
+
+
+    table.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="9"
+                class="empty-data"
+            >
+
+                Memuat data...
+
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL + "?action=getData"
+            );
+
+
+        const result =
+            await response.json();
+
+
+        console.log(
+            "Data Spreadsheet:",
+            result
+        );
+
+
+        if(
+            !result.success
+        ){
+
+            throw new Error(
+                result.message ||
+                "Gagal mengambil data"
+            );
+
+        }
+
+
+        semuaData =
+            result.data || [];
+
+
+        tampilkanData(
+            semuaData
+        );
+
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Error loadData:",
+            error
+        );
+
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="9"
+                    class="empty-data"
+                >
+
+                    Gagal mengambil data
+                    dari Google Spreadsheet.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+
+// =====================================================
+// TAMPILKAN DATA
+// =====================================================
+
+function tampilkanData(data){
+
+    const table =
+        document.getElementById(
+            "dataTable"
+        );
+
+
+    const total =
+        document.getElementById(
+            "totalData"
+        );
+
+
+    table.innerHTML = "";
+
+
+    total.textContent =
+        data.length +
+        " Anggota";
+
+
+    if(
+        data.length === 0
+    ){
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="9"
+                    class="empty-data"
+                >
+
+                    Belum ada data anggota.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    data.forEach(
+        (item, index) => {
+
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.nama)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.nik)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.jabatan)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.divisi)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.homebase)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.nohp)}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.wilayah)}
+                </td>
+
+            `;
+
+
+            table.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+
+// =====================================================
+// ESCAPE HTML
+// =====================================================
+
+function escapeHTML(value){
+
+    if(
+        value === null ||
+        value === undefined
+    ){
+
+        return "";
+
+    }
+
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+
+// =====================================================
+// FORMAT TANGGAL
+// =====================================================
+
+function formatTanggal(value){
+
+    if(!value){
+
+        return "-";
+
+    }
+
+
+    const date =
+        new Date(value);
+
+
+    if(
+        isNaN(
+            date.getTime()
+        )
+    ){
+
+        return String(value);
+
+    }
+
+
+    return date.toLocaleString(
+        "id-ID",
+        {
+            day:"2-digit",
+            month:"2-digit",
+            year:"numeric",
+
+            hour:"2-digit",
+            minute:"2-digit"
+        }
+    );
+
+}
+
+
+
+// =====================================================
+// CEK NIK DARI DATA YANG SUDAH DIAMBIL
+// =====================================================
+
+function cekNik(nik){
+
+    const inputNik =
+        String(nik)
+        .trim()
+        .toLowerCase();
+
+
+    return semuaData.some(
+        item =>
+            String(item.nik || "")
+            .trim()
+            .toLowerCase()
+            === inputNik
+    );
+
+}
+
+
+
+// =====================================================
+// SUBMIT FORM
+// =====================================================
+
+document
+.getElementById("formTim")
+.addEventListener(
+    "submit",
+    async function(e){
+
+        e.preventDefault();
+
+
+        const form =
+            document.getElementById(
+                "formTim"
+            );
+
+
+        const button =
+            document.getElementById(
+                "btnSimpan"
+            );
+
+
+        const pesan =
+            document.getElementById(
+                "pesan"
+            );
+
+
+        // =========================================
+        // VALIDASI FORM
+        // =========================================
+
+        if(
+            !form.checkValidity()
+        ){
+
+            form.reportValidity();
+
+            return;
+
+        }
+
+
+        // =========================================
+        // AMBIL DATA
+        // =========================================
+
+        const data = {
+
+            nama:
+                document
+                .getElementById("nama")
+                .value
+                .trim(),
+
+            nik:
+                document
+                .getElementById("nik")
+                .value
+                .trim(),
+
+            jabatan:
+                document
+                .getElementById("jabatan")
+                .value,
+
+            divisi:
+                document
+                .getElementById("divisi")
+                .value,
+
+            homebase:
+                document
+                .getElementById("homebase")
+                .value
+                .trim(),
+
+            nohp:
+                document
+                .getElementById("nohp")
+                .value
+                .trim(),
+
+            wilayah:
+                document
+                .getElementById("wilayah")
+                .value
+
+        };
+
+
+        // =========================================
+        // CEK NIK DI DATA YANG SUDAH DI LOAD
+        // =========================================
+
+        if(
+            cekNik(data.nik)
+        ){
+
+            pesan.textContent =
+                "✕ NIK " +
+                data.nik +
+                " sudah terdaftar.";
+
+            pesan.className =
+                "error show";
+
+
+            document
+                .getElementById("nik")
+                .focus();
+
+
+            return;
+
+        }
+
+
+        // =========================================
+        // DISABLE BUTTON
+        // =========================================
+
+        button.disabled =
+            true;
+
+        button.textContent =
+            "MENYIMPAN...";
+
+
+        pesan.className =
+            "loading show";
+
+        pesan.textContent =
+            "Menyimpan data...";
+
+
+        try{
+
+
+            // =====================================
+            // KIRIM KE APPS SCRIPT
+            // =====================================
+
+            await fetch(
+                API_URL,
+                {
+
+                    method:"POST",
+
+                    mode:"no-cors",
+
+                    body:
+                        JSON.stringify(
+                            data
+                        )
+
+                }
+            );
+
+
+            // =====================================
+            // TUNGGU SEBENTAR AGAR SPREADSHEET
+            // SELESAI MENYIMPAN
+            // =====================================
+
+            await new Promise(
+                resolve =>
+                    setTimeout(
+                        resolve,
+                        1000
+                    )
+            );
+
+
+            // =====================================
+            // AMBIL DATA TERBARU
+            // =====================================
+
+            await loadData();
+
+
+            // =====================================
+            // CEK APAKAH NIK BENAR-BENAR MASUK
+            // =====================================
+
+            const berhasil =
+                cekNik(
+                    data.nik
+                );
+
+
+            if(!berhasil){
+
+                throw new Error(
+                    "Data belum terdeteksi di Spreadsheet."
+                );
+
+            }
+
+
+            // =====================================
+            // RESET FORM
+            // =====================================
+
+            form.reset();
+
+            updateSignal();
+
+
+            // =====================================
+            // PESAN BERHASIL
+            // =====================================
+
+            pesan.textContent =
+                "✓ Data berhasil disimpan. Silakan input anggota berikutnya.";
+
+            pesan.className =
+                "success show";
+
+
+            document
+                .getElementById("nama")
+                .focus();
+
+
+        }
+
+
+        catch(error){
+
+            console.error(
+                error
+            );
+
+
+            pesan.textContent =
+                "✕ Data gagal disimpan. Silakan coba lagi.";
+
+            pesan.className =
+                "error show";
+
+        }
+
+
+        // =========================================
+        // ENABLE BUTTON
+        // =========================================
+
+        button.disabled =
+            false;
+
+        button.textContent =
+            "SIMPAN DATA";
+
+
+    }
+);
+
+
+
+// =====================================================
+// SEARCH DATA
+// =====================================================
+
+document
+.getElementById("searchData")
+.addEventListener(
+    "input",
+    function(){
+
+        const keyword =
+            this.value
+            .toLowerCase()
+            .trim();
+
+
+        if(
+            keyword === ""
+        ){
+
+            tampilkanData(
+                semuaData
+            );
+
+            return;
+
+        }
+
+
+        const hasil =
+            semuaData.filter(
+                item => {
+
+                    const text =
+
+                        String(
+                            item.nama || ""
+                        )
+
+                        + " " +
+
+                        String(
+                            item.nik || ""
+                        )
+
+                        + " " +
+
+                        String(
+                            item.jabatan || ""
+                        )
+
+                        + " " +
+
+                        String(
+                            item.divisi || ""
+                        )
+
+                        + " " +
+
+                        String(
+                            item.homebase || ""
+                        )
+
+                        + " " +
+
+                        String(
+                            item.wilayah || ""
+                        );
+
+
+                    return text
+                        .toLowerCase()
+                        .includes(
+                            keyword
+                        );
+
+                }
+            );
+
+
+        tampilkanData(
+            hasil
+        );
+
+    }
+);
+
+
+
+// =====================================================
+// TOMBOL REFRESH
+// =====================================================
+
+document
+.getElementById("btnRefresh")
+.addEventListener(
+    "click",
+    function(){
+
+        loadData();
+
+    }
+);
+
+
+
+// =====================================================
+// LOAD DATA SAAT WEBSITE DIBUKA
+// =====================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateSignal();
+
+        loadData();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
